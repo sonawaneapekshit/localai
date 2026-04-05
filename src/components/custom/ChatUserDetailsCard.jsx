@@ -10,7 +10,7 @@ import Link from 'next/link';
 
 const ChatUserDetailsCard = () => {
   return (
-    <Card className="w-full p-3 rounded-none border-l-0 border-r-0 border-b-0">
+    <Card className="w-full p-3 rounded-none border-l-0 border-r-0 border-b-0 bg-transparent">
       <CardContent className="flex items-center gap-3 p-0">
         <HugeiconsIcon icon={User03FreeIcons} size={32} className="shrink-0" />
         <div className="min-w-0 flex-1">
