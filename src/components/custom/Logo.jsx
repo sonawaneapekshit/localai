@@ -1,19 +1,31 @@
 import Image from 'next/image';
-import { AspectRatio } from '@/components/ui/aspect-ratio';
+import PropTypes from 'prop-types';
 
-const Logo = () => {
+const Logo = ({ classes, width = 200, height = 30 }) => {
   return (
-    <h1>
-      <AspectRatio ratio={16 / 9} className="rounded-lg bg-muted">
-        <Image
-          alt="localai-logo"
-          src="/Ararat-colored.svg"
-          width={200}
-          height={30}
-        />
-      </AspectRatio>
+    <h1 className={classes}>
+      <Image
+        alt="localai-logo"
+        src="/Ararat-black.svg"
+        width={width}
+        height={height}
+        className="dark:hidden"
+      />
+      <Image
+        alt="localai-logo"
+        src="/Ararat-white.svg"
+        width={width}
+        height={height}
+        className="hidden dark:block"
+      />
     </h1>
   );
+};
+
+Logo.propTypes = {
+  classes: PropTypes.string,
+  width: PropTypes.number,
+  height: PropTypes.number,
 };
 
 export default Logo;
